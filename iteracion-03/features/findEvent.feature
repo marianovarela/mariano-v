@@ -1,8 +1,16 @@
 Feature: As the speaker, I want to be able to find events and view their statistics
-  Scenario: Stats fot an event
+  Scenario: The event exists 
 
-    Given I am in the “View_events” page
-    When I press ”Viex_Stats” in the field “eventX”
-    Then I am in the “eventX stats”
+    Given I am in the “Serch event” page
+    When I enter "event name" in the field
+    And I press "Search"
+    Then I should see a list of filtered events
+
+  Scenario: The event does not exists 
+  
+    Given I am in the “Serch event” page
+    When I enter "event name" in the field
+    And I press "Search"
+    Then I should see launch the poster "event doesn't exist"
 
  
